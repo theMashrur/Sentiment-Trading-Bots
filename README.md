@@ -4,5 +4,5 @@ Only the reddit bot has been uploaded so far.
 
 Requirements
 ```
-pip install python-binance
+pip install python-binance praw textblob
 ```
