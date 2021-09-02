@@ -6,3 +6,5 @@ Requirements
 ```
 pip install python-binance praw textblob
 ```
+
+I reccommend using an anaconda environment with this, but naturally, this bot works with anything
