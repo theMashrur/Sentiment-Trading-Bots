@@ -7,4 +7,4 @@ Requirements
 pip install python-binance praw textblob
 ```
 
-I reccommend using an anaconda environment with this, but naturally, this bot works with anything
+I reccommend using an anaconda environment with this, but naturally, these bots work with anything
