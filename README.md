@@ -3,6 +3,7 @@ A variety of stock/cryptocurrency trading bots that use NLP and Sentiment analys
 Only the reddit bot has been uploaded so far.
 
 <h1>Prerequisites</h1>
+
 ```
 pip install python-binance praw textblob tensorflow
 ```
