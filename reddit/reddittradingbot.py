@@ -5,6 +5,7 @@ from textblob import TextBlob
 from binance.client import Client
 from binance.enums import *
 
+#access reddit through the PRAW API
 reddit = praw.Reddit(
     client_id = config.REDDIT_ID,
     client_secret = config.REDDIT_SECRET,
@@ -12,16 +13,22 @@ reddit = praw.Reddit(
     user_agent = "USERAGENT",
     username = config.REDDIT_USER
 )
-print(reddit)
+#access binance through the binance python API
 client = Client(config.BINANCE_KEY, config.BINANCE_SECRET)
 
+#initialize variables
 sentimentArr = []
-required = 100
-TRADE_SYMBOL = "BTCUSDT"
+required = 100 #sample taken to calculate sentiment
+TRADE_SYMBOL = "BTCUSDT" #stores our exchange symbol. Here its set to BTC/USDT
 TRADE_QUANTITY = "0.01"
 in_position = False
 
+
 def order(side, quantity, symbol, order_type=ORDER_TYPE_MARKET):
+    """
+    Execute buy and sell orders on the Binance exchange.
+    Takes for argument Buy/Sell, quantity, symbol, with a default of market order
+    """
     try:
         print("sending order")
         order = client.create_order(symbol=symbol, side=side, type=order_type, quantity=quantity)
@@ -31,6 +38,9 @@ def order(side, quantity, symbol, order_type=ORDER_TYPE_MARKET):
     return True
 
 def Average(arr):
+    """
+    Takes the average of the last 'required' items of an array
+    """
     if len(arr) == 0:
         return arr
     else:
