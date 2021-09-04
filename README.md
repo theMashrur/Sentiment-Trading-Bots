@@ -9,3 +9,5 @@ pip install python-binance praw textblob tensorflow
 ```
 
 I reccommend using an anaconda environment with this, but naturally, these bots work with anything
+
+I will not take any responsibility for any profits/losses incurred by any third party using these bots
