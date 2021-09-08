@@ -12,16 +12,18 @@ from binance.enums import *
 
 from ernie import SentenceClassifier
 import numpy as np
-# To set your enviornment variables in your terminal run the following line:
-# export 'BEARER_TOKEN'='<your_bearer_token>'
+
+#initialise global variables
 bearer_token = config.BEARER_TOKEN
 classifier = SentenceClassifier(model_path='./model')
 
 position = False
-TRADE_SYMBOL = "BTCUSDT"
-TRADE_QUANTITY = 0.001
 arr = []
 num = 100
+
+#These variables assume use of the Binance API
+TRADE_SYMBOL = "BTCUSDT"
+TRADE_QUANTITY = 0.001
 
 
 
@@ -98,10 +100,10 @@ def get_stream(set):
                 response.status_code, response.text
             )
         )
-    for response_line in response.iter_lines():
-        if response_line:
-            json_response = json.loads(response_line)
-            tweet = json_response['data']['text']
+    for line in response.iter_lines():
+        if line:
+            json_res = json.loads(line)
+            tweet = json_res['data']['text']
             tweet = prep.clean(tweet)
             tweet = tweet.replace(':', '')
             try:
@@ -118,19 +120,22 @@ def get_stream(set):
                         print("Total Positive tweets: {0}".format(pos))
                         print("Total Negative tweets: {0}".format(neg))
                         if pos > 20:
+                            #numbers for buy/sell thresholds can be freely changed as long as threshold << num
                             if position:
                                 print("Buy signalled, but already in position")
                             else:
                                 print("Buy Order signalled")
-                                #order_executed  = order(SIDE_BUY, TRADE_QUANTITY, TRADE_SYMBOL)
-                                position = True
-                                print("Buy order executed")
+                                order_executed  = order(SIDE_BUY, TRADE_QUANTITY, TRADE_SYMBOL)
+                                if order_executed:
+                                    position = True
+                                    print("Buy order executed")
                         elif neg > 20:
                             if position:
                                 print("Sell order signalled")
-                                #order_executed = order(SIDE_BUY, TRADE_QUANTITY, TRADE_SYMBOL)
-                                print("Sell order executed")
-                                position = False
+                                order_executed = order(SIDE_BUY, TRADE_QUANTITY, TRADE_SYMBOL)
+                                if order_executed:
+                                    print("Sell order executed")
+                                    position = False
                             else:
                                 print("Sell order signalled, but none in possession")
             except:
