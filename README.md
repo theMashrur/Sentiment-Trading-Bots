@@ -8,7 +8,8 @@ Only the reddit and twitter bots have been uploaded so far.
 pip install python-binance praw textblob tensorflow ta ernie torch
 ```
 
-I reccommend using an anaconda environment with this, but naturally, these bots work with anything
+I reccommend using an anaconda environment with this, but naturally, these bots work with anything.
+
 Additionally, should you be running this on a local device, I recommend having a CUDA enabled GPU and
 all the relevant CUDA and cudnn files installed. It <i>will</i> run on a CPU, but not as fast
 
