@@ -6,10 +6,13 @@ import preprocessor as prep
 from langdetect import detect
 from csv import writer
 
-# To set your enviornment variables in your terminal run the following line:
-# export 'BEARER_TOKEN'='<your_bearer_token>'
 bearer_token = config.BEARER_TOKEN
 
+"""
+This file is used to stream tweets that match filters set by you
+and create a dataset from it.
+Should you not wish to create your own dataset, I have provided one (but it only relates to bitcoin
+"""
 
 def bearer_oauth(r):
     """
@@ -55,9 +58,9 @@ def delete_all_rules(rules):
 
 def set_rules(delete):
     # You can adjust the rules if needed
+    #in this example, the rules are set to only target tweets with the word bitcoin in them, and the tag bitcoin
     rules = [
         {"value": "bitcoin", "tag": "bitcoin"},
-        #{"value": "cat has:images -grumpy", "tag": "cat pictures"},
     ]
     payload = {"add": rules}
     response = requests.post(
@@ -86,7 +89,6 @@ def get_stream(set):
     for response_line in response.iter_lines():
         if response_line:
             json_response = json.loads(response_line)
-            #print(json.dumps(json_response, indent=4, sort_keys=True))
             tweet = json_response['data']['text']
             tweet = prep.clean(tweet)
             tweet = tweet.replace(':', '')
