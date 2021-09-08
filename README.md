@@ -5,7 +5,7 @@ Only the reddit bot has been uploaded so far.
 <h1>Prerequisites</h1>
 
 ```
-pip install python-binance praw textblob tensorflow ta
+pip install python-binance praw textblob tensorflow ta ernie
 ```
 
 I reccommend using an anaconda environment with this, but naturally, these bots work with anything
