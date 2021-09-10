@@ -23,4 +23,5 @@ I will not take any responsibility for any profits/losses incurred by any third 
   <li><a href="https://github.com/labteral/ernie">Ernie</a> a BERT based sentence classification package built on the Keras API</li>
   <li><a href="https://praw.readthedocs.io/en/stable/#">PRAW</a> - the python reddit API wrapper</li>
   <li><a href="https://python-binance.readthedocs.io/en/latest/">python-binance</a> the python binance API wrapper</li>
+  <li><a href="https://developer.nvidia.com/cuda-zone">CUDA</a> - a parallel computing platform and programming model developed by Nvidia for computing on GPUs</li>
 </ul>
