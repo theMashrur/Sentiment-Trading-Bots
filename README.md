@@ -14,3 +14,13 @@ Additionally, should you be running this on a local device, I recommend having a
 all the relevant CUDA and cudnn files installed. It <i>will</i> run on a CPU, but not as fast
 
 I will not take any responsibility for any profits/losses incurred by any third party using these bots
+
+<h1>Built Using</h1>
+<ul>
+  <li><a href="https://pandas.pydata.org/">Pandas</a> - a data handling package</li>
+  <li><a href="https://www.tensorflow.org/">Tensorflow</a> - a deep learning framework built by Google</li>
+  <li><a href="https://pytorch.org/">PyTorch</a> - a deep learning framework built by Facebook</li>
+  <li><a href="https://github.com/labteral/ernie">Ernie</a> a BERT based sentence classification package built on the Keras API</li>
+  <li><a href="https://praw.readthedocs.io/en/stable/#">PRAW</a> - the python reddit API wrapper</li>
+  <li><a href="https://python-binance.readthedocs.io/en/latest/">python-binance</a> the python binance API wrapper</li>
+</ul>
