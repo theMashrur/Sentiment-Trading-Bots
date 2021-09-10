@@ -24,4 +24,5 @@ I will not take any responsibility for any profits/losses incurred by any third 
   <li><a href="https://praw.readthedocs.io/en/stable/#">PRAW</a> - the python reddit API wrapper</li>
   <li><a href="https://python-binance.readthedocs.io/en/latest/">python-binance</a> the python binance API wrapper</li>
   <li><a href="https://developer.nvidia.com/cuda-zone">CUDA</a> - a parallel computing platform and programming model developed by Nvidia for computing on GPUs</li>
+  <li><a href="https://developer.nvidia.com/cudnn">cuDNN</a> - a GPU accelerated library for Deep Neural Networks based on CUDA</li>
 </ul>
